@@ -113,9 +113,16 @@ function registerForm(e) {
 
         localStorage.setItem('data', JSON.stringify(args));
         const table = document.querySelector('.data-table').classList.remove('hidden');
-        const registration = document.querySelector('.register-row').classList.add('hidden');
+        const registration = document.querySelector('.register-row');
         const btn = document.querySelector('#button-register-form');
         btn.classList.remove('edit-btn-disable');
+        let parent = registration.childNodes[1];
+        let heading = parent.childNodes[1];
+        heading.innerText = 'Register';
+        let formParent = parent.childNodes[3];
+        let formChild = formParent.childNodes[13];
+        formChild.innerText = 'Submit';
+        registration.classList.add('hidden');
 
 
     }
